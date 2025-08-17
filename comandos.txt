@@ -1,0 +1,4 @@
+terraform init                        inicializar o Terraform
+terraform plan                        Planejar todas as mudanças mas ainda não aplicar
+terraform apply                       Aplicar todas as mudanças
+terraform apply -auto-approve         Aplicar todas as mudanças automaticamente sem precisar dar um "yes"
