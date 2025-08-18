@@ -8,3 +8,5 @@ terraform apply                       Aplicar todas as mudanças
 terraform fmt                         Aplica a formatação correta nos arquivos .tf
   -recursive                          Aplica em todos os arquivoes na arvore
   -check                              Verifica se todos os arquivos estão formatados, se algum não estiver, ele não aplica
+
+terraform validate                    Verifica se os codigos estão feitos de forma válida
