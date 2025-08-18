@@ -1,4 +1,10 @@
 terraform init                        inicializar o Terraform
+
 terraform plan                        Planejar todas as mudanças mas ainda não aplicar
+
 terraform apply                       Aplicar todas as mudanças
-terraform apply -auto-approve         Aplicar todas as mudanças automaticamente sem precisar dar um "yes"
+  -auto-approve                       Aplicar todas as mudanças automaticamente sem precisar dar um "yes"
+  
+terraform fmt                         Aplica a formatação correta nos arquivos .tf
+  -recursive                          Aplica em todos os arquivoes na arvore
+  -check                              Verifica se todos os arquivos estão formatados, se algum não estiver, ele não aplica
