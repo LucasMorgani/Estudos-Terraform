@@ -1,4 +1,5 @@
-#Criando subnet privada - us-east-1a
+#Criando subnet privada
+#1a
 resource "aws_subnet" "eks_subnet_priv_1a" {
   #Dados da subnet
   vpc_id            = aws_vpc.eks_vpc.id                   #Pegando o id da vpc como atributo
@@ -15,9 +16,8 @@ resource "aws_subnet" "eks_subnet_priv_1a" {
   )
   #----
 }
-#----
 
-#Criando subnet privada - us-east-1b
+#1b
 resource "aws_subnet" "eks_subnet_priv_1b" {
   #Dados da subnet
   vpc_id            = aws_vpc.eks_vpc.id                   #Pegando o id da vpc como atributo
@@ -33,5 +33,18 @@ resource "aws_subnet" "eks_subnet_priv_1b" {
     }
   )
   #----
+}
+#----
+
+#Route table association das subnets privadas
+#1a
+resource "aws_route_table_association" "eks_rtb_assoc_priv_1a" {
+  subnet_id      = aws_subnet.eks_subnet_priv_1a.id
+  route_table_id = aws_route_table.eks_private_route_table-1a.id
+}
+#1b
+resource "aws_route_table_association" "eks_rtb_assoc_priv_1b" {
+  subnet_id      = aws_subnet.eks_subnet_priv_1b.id
+  route_table_id = aws_route_table.eks_private_route_table-1b.id
 }
 #----
