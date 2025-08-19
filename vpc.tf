@@ -1,3 +1,4 @@
+#Adicionando uma nova VPC
 resource "aws_vpc" "eks_vpc" {
   #Dados dos resources
   cidr_block           = var.cidr_block # Puxa o valor informado em variables.tf
@@ -15,3 +16,4 @@ resource "aws_vpc" "eks_vpc" {
   #----
 
 }
+#----

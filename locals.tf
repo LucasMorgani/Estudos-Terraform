@@ -1,3 +1,4 @@
+#Criando um locals para tags gerais e mais utilizadas no projeto
 locals {
   tags = {
     Department   = "DevOps"
@@ -6,3 +7,4 @@ locals {
     Environment  = "Development"
   }
 }
+#----
