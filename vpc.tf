@@ -10,7 +10,7 @@ resource "aws_vpc" "eks_vpc" {
   tags = merge(
     local.tags, #Passando variaveis reutilizaveis salvas em locals.tf
     {
-      Name = "comunidadedevops-vpc" #Passando a tag especifica local
+      Name = "${var.project_name}-vpc" #Passando a tag especifica local
     }
   )
   #----
