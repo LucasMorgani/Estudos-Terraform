@@ -8,7 +8,7 @@ resource "aws_subnet" "eks_subnet_private_1a" {
   #----
   #Declarando tags mescladas, entre reutilizaveis (locals.tf) e tags especificas locais
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                              = "${var.project_name}-private-subnet-1a"
       "kubernetes.io/role/internal-elb" = 1
@@ -26,7 +26,7 @@ resource "aws_subnet" "eks_subnet_private_1b" {
   #----
   #Declarando tags mescladas, entre reutilizaveis (locals.tf) e tags especificas locais
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                              = "${var.project_name}-private-subnet-1b"
       "kubernetes.io/role/internal-elb" = 1

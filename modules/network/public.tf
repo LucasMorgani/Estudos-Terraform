@@ -7,9 +7,9 @@ resource "aws_subnet" "eks_subnet_public_1a" {
   availability_zone       = "${data.aws_region.current.region}a" #Pegando a região atual com o data source (region.tf)
   map_public_ip_on_launch = true
   #----
-  #Declarando tags mescladas, entre reutilizaveis (locals.tf) e tags especificas locais
+  #Declarando tags mescladas, por variavel e declarando novas
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                     = "${var.project_name}-public-subnet-1a",
       "kubernetes.io/role/elb" = 1 #Passando a tag de subnet publica
@@ -26,9 +26,9 @@ resource "aws_subnet" "eks_subnet_public_1b" {
   availability_zone       = "${data.aws_region.current.region}b" #Pegando a região atual com o data source (region.tf)
   map_public_ip_on_launch = true
   #----
-  #Declarando tags mescladas, entre reutilizaveis (locals.tf) e tags especificas locais
+  #Declarando tags mescladas, por variavel e declarando novas
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                     = "${var.project_name}-public-subnet-1b",
       "kubernetes.io/role/elb" = 1 #Passando a tag de subnet publica

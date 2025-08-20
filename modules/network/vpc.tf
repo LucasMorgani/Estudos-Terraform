@@ -8,7 +8,7 @@ resource "aws_vpc" "eks_vpc" {
 
   #Declarando tags mescladas, entre reutilizaveis (locals.tf) e tags especificas locais
   tags = merge(
-    local.tags, #Passando variaveis reutilizaveis salvas em locals.tf
+    var.tags, #Passando variaveis reutilizaveis salvas em locals.tf
     {
       Name = "${var.project_name}-vpc" #Passando a tag especifica local
     }
