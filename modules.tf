@@ -23,4 +23,11 @@ module "eks_mng" {
   private_subnet_1a = module.eks_network.subnet_private_1a
   private_subnet_1b = module.eks_network.subnet_private_1b
 }
+#eks_aws_lb_controller
+module "eks_aws_lb_controller" {
+  source       = "./modules/aws-lb-controller"
+  project_name = var.project_name
+  tags         = local.tags
+  oidc         = module.eks_cluster.oidc
+}
 #----
