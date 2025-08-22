@@ -12,6 +12,9 @@ resource "aws_eks_node_group" "eks_manage_node_group" {
 
   tags = merge(
     var.tags,
+    {
+      Name = "${var.project_name}-nodegroup"
+    }
   )
 
   #Definindo o desired scling config
